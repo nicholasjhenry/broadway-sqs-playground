@@ -1,16 +1,3 @@
-release.build:
-	mix release --overwrite
-
-release.run:
-	QUEUE_NAME=http://localhost:9324/queue/broadway-demo \
-	AWS_SQS_ACCESS_KEY_ID=x \
-	AWS_SQS_SECRET_ACCESS_KEY=x \
-	AWS_SQS_REGION=elasticmq \
-	AWS_SQS_HOST=localhost \
-	AWS_SQS_PORT=9324 \
-	SCHEME=http:// \
-	_build/dev/rel/broadway_sqs_playground/bin/broadway_sqs_playground start
-
 containers.up:
 	docker-compose up -d
 

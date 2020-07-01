@@ -1,5 +1,10 @@
 defmodule BroadwaySqsPlayground.Generator do
+   @start_apps [:ex_aws, :hackney]
+
   def generate(count \\ 1_000) do
+    _ = Application.load(:broadway_sqs_playground)
+    Enum.each(@start_apps, &Application.ensure_all_started/1)
+
     queue_name = Application.fetch_env!(:broadway_sqs_playground, :queue_name)
 
     Stream.each(1..count, fn _n ->
