@@ -9,6 +9,7 @@ defmodule BroadwaySnsPlayground.Application do
     children = [
       # Starts a worker by calling: BroadwaySnsPlayground.Worker.start_link(arg)
       # {BroadwaySnsPlayground.Worker, arg}
+      {BroadwaySnsPlayground.BroadwayDemo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

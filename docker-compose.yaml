@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  elasticmq:
+    image: softwaremill/elasticmq
+    ports:
+      - "9324:9324"
+    volumes:
+      - ./ops/elasticmq/custom.conf:/opt/elasticmq.conf
+
+volumes:
+  pgdata: {}
