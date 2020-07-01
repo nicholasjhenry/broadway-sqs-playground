@@ -31,7 +31,7 @@ container.build:
 	docker build -f ops/prod/Dockerfile -t broadway_sqs_playground:latest .
 
 container.release:
-	echo "NOOP"
+	docker run -it --rm --env-file ops/prod/.env --name broadway_sqs_playground broadway_sqs_playground:latest eval "BroadwaySqsPlayground.Release.migrate()"
 
 container.generator:
 	docker run -it --rm --env-file ops/prod/.env --name broadway_sqs_playground_generator broadway_sqs_playground:latest eval "BroadwaySqsPlayground.Generator.generate(1_000_000)"
