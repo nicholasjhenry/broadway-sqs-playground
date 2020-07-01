@@ -11,3 +11,9 @@ config :ex_aws, :sqs,
          port: "9324",
          scheme: "http://",
          region: "elasticmq"
+
+config :broadway_sqs_playground,
+  ecto_repos: [BroadwaySqsPlayground.Repo]
+
+config :broadway_sqs_playground, BroadwaySqsPlayground.Repo,
+  url: "ecto://root:@localhost/broadway_sqs_playground_dev"

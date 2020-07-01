@@ -2,6 +2,7 @@ defmodule BroadwaySqsPlayground.BroadwayDemo do
   use Broadway
 
   alias Broadway.Message
+  alias BroadwaySqsPlayground.{Repo, StockItem}
 
   def start_link(_opts) do
     producer =
@@ -28,19 +29,16 @@ defmodule BroadwaySqsPlayground.BroadwayDemo do
 
   @impl true
   def handle_message(_, %Message{} = message, _) do
-    message
-    |> Message.update_data(fn
-      data ->
-        data = String.to_integer(data)
-        data * data
-    end)
+    Message.update_data(message, &Jason.decode!(&1, keys: :atoms))
   end
 
   @impl true
   def handle_batch(_, messages, _, _) do
-    list = messages |> Enum.map(fn e -> e.data end)
+    records = Enum.map(messages, fn e -> e.data end)
 
-    IO.inspect(list,
+    Repo.insert_all(StockItem, records, on_conflict: :replace_all)
+
+    IO.inspect(records,
       label: "Got batch of finished jobs from processors, sending ACKs to SQS as a batch."
     )
 

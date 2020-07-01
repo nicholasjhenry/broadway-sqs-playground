@@ -9,7 +9,8 @@ defmodule BroadwaySqsPlayground.Application do
     children = [
       # Starts a worker by calling: BroadwaySqsPlayground.Worker.start_link(arg)
       # {BroadwaySqsPlayground.Worker, arg}
-      {BroadwaySqsPlayground.BroadwayDemo, []}
+      {BroadwaySqsPlayground.BroadwayDemo, []},
+      {BroadwaySqsPlayground.Repo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

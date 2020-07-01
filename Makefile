@@ -1,3 +1,6 @@
+containers.up:
+	docker-compose up -d
+
 demo.generator:
 	mix run -e "BroadwaySqsPlayground.Generator.generate()" -- 1_000_000
 
