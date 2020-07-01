@@ -16,11 +16,11 @@ defmodule BroadwaySqsPlayground.BroadwayDemo do
       name: __MODULE__,
       producer: [module: producer],
       processors: [
-        default: []
+        default: [concurrency: 5]
       ],
       batchers: [
         default: [
-          batch_size: 10,
+          batch_size: 100,
           batch_timeout: 20
         ]
       ]
