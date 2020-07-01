@@ -1,9 +1,9 @@
-defmodule BroadwaySnsPlayground.MixProject do
+defmodule BroadwaySqsPlayground.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :broadway_sns_playground,
+      app: :broadway_sqs_playground,
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
@@ -15,7 +15,7 @@ defmodule BroadwaySnsPlayground.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {BroadwaySnsPlayground.Application, []}
+      mod: {BroadwaySqsPlayground.Application, []}
     ]
   end
 

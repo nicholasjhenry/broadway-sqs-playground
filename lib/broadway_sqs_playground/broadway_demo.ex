@@ -1,4 +1,4 @@
-defmodule BroadwaySnsPlayground.BroadwayDemo do
+defmodule BroadwaySqsPlayground.BroadwayDemo do
   use Broadway
 
   alias Broadway.Message
@@ -6,14 +6,9 @@ defmodule BroadwaySnsPlayground.BroadwayDemo do
   def start_link(_opts) do
     producer =
       {BroadwaySQS.Producer,
-       queue_url: "http://localhost:9324/queue/broadway-demo",
-       config: [
-         access_key_id: "x",
-         secret_access_key: "x",
-         host: "localhost",
-         port: "9324",
-         scheme: "http://",
-         region: "elasticmq"
+       [
+         queue_url: Application.fetch_env!(:broadway_sns_playground, :queue_name),
+         config: Application.fetch_env!(:ex_aws, :sqs)
        ]}
 
     Broadway.start_link(__MODULE__,

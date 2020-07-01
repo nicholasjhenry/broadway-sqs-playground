@@ -1,8 +1,8 @@
-defmodule BroadwaySnsPlaygroundTest do
+defmodule BroadwaySqsPlaygroundTest do
   use ExUnit.Case
-  doctest BroadwaySnsPlayground
+  doctest BroadwaySqsPlayground
 
   test "greets the world" do
-    assert BroadwaySnsPlayground.hello() == :world
+    assert BroadwaySqsPlayground.hello() == :world
   end
 end

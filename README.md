@@ -1,4 +1,4 @@
-# BroadwaySnsPlayground
+# BroadwaySqsPlayground
 
 **TODO: Add description**
 

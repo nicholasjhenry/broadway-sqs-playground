@@ -1,6 +1,6 @@
-defmodule BroadwaySnsPlayground do
+defmodule BroadwaySqsPlayground do
   @moduledoc """
-  Documentation for `BroadwaySnsPlayground`.
+  Documentation for `BroadwaySqsPlayground`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule BroadwaySnsPlayground do
 
   ## Examples
 
-      iex> BroadwaySnsPlayground.hello()
+      iex> BroadwaySqsPlayground.hello()
       :world
 
   """

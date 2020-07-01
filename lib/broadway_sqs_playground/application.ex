@@ -1,4 +1,4 @@
-defmodule BroadwaySnsPlayground.Application do
+defmodule BroadwaySqsPlayground.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -7,14 +7,14 @@ defmodule BroadwaySnsPlayground.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: BroadwaySnsPlayground.Worker.start_link(arg)
-      # {BroadwaySnsPlayground.Worker, arg}
-      {BroadwaySnsPlayground.BroadwayDemo, []}
+      # Starts a worker by calling: BroadwaySqsPlayground.Worker.start_link(arg)
+      # {BroadwaySqsPlayground.Worker, arg}
+      {BroadwaySqsPlayground.BroadwayDemo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: BroadwaySnsPlayground.Supervisor]
+    opts = [strategy: :one_for_one, name: BroadwaySqsPlayground.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
