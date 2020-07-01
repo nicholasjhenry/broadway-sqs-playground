@@ -7,7 +7,7 @@ defmodule BroadwaySqsPlayground.BroadwayDemo do
     producer =
       {BroadwaySQS.Producer,
        [
-         queue_url: Application.fetch_env!(:broadway_sns_playground, :queue_name),
+         queue_url: Application.fetch_env!(:broadway_sqs_playground, :queue_name),
          config: Application.fetch_env!(:ex_aws, :sqs)
        ]}
 
