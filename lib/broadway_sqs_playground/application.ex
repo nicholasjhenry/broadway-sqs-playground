@@ -10,6 +10,7 @@ defmodule BroadwaySqsPlayground.Application do
       # Starts a worker by calling: BroadwaySqsPlayground.Worker.start_link(arg)
       # {BroadwaySqsPlayground.Worker, arg}
       {BroadwaySqsPlayground.BroadwayDemo, []},
+      {BroadwaySqsPlayground.Telemetry, []},
       {BroadwaySqsPlayground.Repo, []}
     ]
 
