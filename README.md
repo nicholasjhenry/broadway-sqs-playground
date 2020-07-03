@@ -57,3 +57,24 @@ To generate a release in a Docker container:
     make -f ops/prod/Makefile container.release
     make -f ops/prod/Makefile container.run
     make -f ops/prod/Makefile container.generator
+
+## Metrics with Telemetry and Prometheus
+
+- Endpoint: http://locahost:9568/metrics
+- Prometheus: http://localhost:9090/
+
+### Docs
+
+- https://hexdocs.pm/telemetry_metrics_prometheus/TelemetryMetricsPrometheus.html
+- https://hexdocs.pm/telemetry_metrics_prometheus_core/TelemetryMetricsPrometheus.Core.html
+- https://hexdocs.pm/ecto/Ecto.Repo.html#module-telemetry-events
+
+### Notes
+
+Metric types:
+
+- Counter - Counter
+- Distribution - Histogram
+- LastValue - Gauge
+- Sum - Counter
+- Summary - Summary (Not supported)
