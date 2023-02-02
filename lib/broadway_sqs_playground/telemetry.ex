@@ -20,11 +20,27 @@ defmodule BroadwaySqsPlayground.Telemetry do
   def metrics do
     [
       # Database Metrics https://hexdocs.pm/ecto/Ecto.Repo.html#module-adapter-specific-events
-      summary("broadway_sqs_playground.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("broadway_sqs_playground.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("broadway_sqs_playground.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("broadway_sqs_playground.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("broadway_sqs_playground.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("broadway_sqs_playground.repo.query.total_time",
+        unit: {:native, :millisecond},
+        description: "The sum of the other measurements"
+      ),
+      summary("broadway_sqs_playground.repo.query.decode_time",
+        unit: {:native, :millisecond},
+        description: "The time spent decoding the data received from the database"
+        ),
+      summary("broadway_sqs_playground.repo.query.query_time",
+        unit: {:native, :millisecond},
+        description: "The time spent executing the query"
+      ),
+      summary("broadway_sqs_playground.repo.query.queue_time",
+        unit: {:native, :millisecond},
+        description: "The time spent waiting for a database connection"
+        ),
+      summary("broadway_sqs_playground.repo.query.idle_time",
+        unit: {:native, :millisecond},
+        description:
+          "The time the connection spent waiting before being checked out for the query"
+      ),
 
       # Prometheus: use units `seconds`, specify the name to report
       distribution("broadway_sqs_playground.repo.query.total_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :total_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
