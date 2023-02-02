@@ -2,7 +2,7 @@ containers.up:
 	docker-compose up -d
 
 demo.generator:
-	mix run -e "BroadwaySqsPlayground.Generator.generate(100_000)"
+	mix eval "BroadwaySqsPlayground.Generator.generate(100_000)"
 
 elasticmq.list_queues:
 	aws sqs list-queues --endpoint-url http://localhost:9324
