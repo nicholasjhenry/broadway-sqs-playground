@@ -29,12 +29,13 @@ defmodule BroadwaySqsPlayground.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ex_aws, "~> 2.4"},
       {:broadway_sqs, "~> 0.6"},
       {:hackney, "~> 1.16"},
       {:jason, "~> 1.2"},
       {:ecto_sql, "~> 3.4"},
       {:myxql, "~> 0.4.1"},
-      {:telemetry_metrics, "~> 0.5.0"},
+      {:telemetry_metrics, "~> 0.6.1"},
       {:telemetry_metrics_prometheus, "~> 0.6"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
