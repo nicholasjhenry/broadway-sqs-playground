@@ -30,7 +30,7 @@ defmodule BroadwaySqsPlayground.MixProject do
   defp deps do
     [
       {:ex_aws, "~> 2.4"},
-      {:broadway_sqs, "~> 0.6"},
+      {:broadway_sqs, "~> 0.7.2"},
       {:hackney, "~> 1.16"},
       {:jason, "~> 1.2"},
       {:ecto_sql, "~> 3.4"},
