@@ -35,7 +35,7 @@ are done in batches of 100 records.
 ## Setup
 
     git clone https://github.com/nicholasjhenry/broadway-sqs-playground.git
-    make container.run
+    make containers.up
     mix app.setup
 
 ## Demo
@@ -43,7 +43,7 @@ are done in batches of 100 records.
    # Terminal 1
    iex -S mix
    # Terminal 2
-   make demo.generate
+   make demo.generator
 
 ## Production
 
