@@ -20,6 +20,11 @@ defmodule BroadwaySqsPlayground.Telemetry do
   def metrics do
     [
       # Database Metrics https://hexdocs.pm/ecto/Ecto.Repo.html#module-adapter-specific-events
+      # NOTE: Prometheus will emit this log entry, these can be safely ignored as distribution
+      # metrics are configured below.
+      #
+      #    [warning] Metric type summary is unsupported. Dropping measure.
+      #
       summary("broadway_sqs_playground.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
