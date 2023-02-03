@@ -48,11 +48,35 @@ defmodule BroadwaySqsPlayground.Telemetry do
       ),
 
       # Prometheus: use units `seconds`, specify the name to report
-      distribution("broadway_sqs_playground.repo.query.total_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :total_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
-      distribution("broadway_sqs_playground.repo.query.decode_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :decode_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
-      distribution("broadway_sqs_playground.repo.query.queue_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :query_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
-      distribution("broadway_sqs_playground.repo.query.query_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :query_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
-      distribution("broadway_sqs_playground.repo.query.idle_time", event_name: [:broadway_sqs_playground, :repo, :query], measurement: :idel_time, unit: {:native, :second}, reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]),
+      distribution("broadway_sqs_playground.repo.query.total_time",
+        event_name: [:broadway_sqs_playground, :repo, :query],
+        measurement: :total_time,
+        unit: {:native, :second},
+        reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]
+      ),
+      distribution("broadway_sqs_playground.repo.query.decode_time",
+        event_name: [:broadway_sqs_playground, :repo, :query],
+        measurement: :decode_time,
+        unit: {:native, :second},
+        reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]
+      ),
+      distribution("broadway_sqs_playground.repo.query.queue_time",
+        event_name: [:broadway_sqs_playground, :repo, :query],
+        measurement: :query_time, unit: {:native, :second},
+        reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]
+      ),
+      distribution("broadway_sqs_playground.repo.query.query_time",
+        event_name: [:broadway_sqs_playground, :repo, :query],
+        measurement: :query_time,
+        unit: {:native, :second},
+        reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]
+      ),
+      distribution("broadway_sqs_playground.repo.query.idle_time",
+        event_name: [:broadway_sqs_playground, :repo, :query],
+        measurement: :idel_time,
+        unit: {:native, :second},
+        reporter_options: [ buckets: [0.01, 0.025, 0.05, 0.1, 0.2, 0.5, 1]]
+      ),
 
       # Broadway Metrics
       # dispatched by processor when the internal GenStage handle_events/3 callback has completed
